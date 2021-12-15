@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>blog</title>
+</head>
+<body>
+    <h1>hello my blog</h1>
+
+    <ul>
+        {% for p in posts %}
+        <li>
+            {{ p.pk }} / {{ p.title }} / {{ p.created_at }} / {{ p.updated_at }}
+        </li>
+        {% endfor %}
+    </ul>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>글 번호</th>
+                <th>제목</th>
+                <th>작성시간</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                {% for p in posts %}
+                    <tr>
+                        <td>{{ p.pk }}</td>
+                        <td>{{ p.title }}</td>
+                        <td>{{ p.created_at }}</td>
+
+                    </tr>
+                {% endfor %}
+            </tr>
+        </tbody>
+    </table>
+
+{% for p in posts %}
+    <hr />
+    <h3>{{ p.title }}</h3>
+    <h4>{{ p.created_at }}</h4>
+    <p>{{ p.content }}</p>
+{% endfor %}
+</body>
+</html>
