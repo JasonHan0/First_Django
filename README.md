@@ -1,2 +1,2 @@
-# start_django
+# Start Django
 django demo
